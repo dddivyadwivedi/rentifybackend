@@ -1,3 +1,4 @@
+require('dotenv').config();
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
@@ -7,6 +8,6 @@ async function bootstrap() {
   });
   app.setGlobalPrefix('/api');
   app.enableCors();
-  await app.listen(3002);
+  await app.listen(process.env.PORT);
 }
 bootstrap();
